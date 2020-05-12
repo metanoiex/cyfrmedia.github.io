@@ -3,6 +3,7 @@
   box-sizing: border-box;
 }
 
+/* Creates main grid to sections on */
 .card{
   display: grid;
   grid: auto-flow / 1fr 1fr 1fr;
@@ -12,13 +13,50 @@
   grid-column: 1/3;
   grid-row-start: 1;
 }
+ /* Creates minigrid to layout main title/intro card */
+.minigrid{
+  display: grid;
+  grid: 1fr 2fr / 1fr 1fr 1fr 1fr;
+}
 
+#portrait{
+  grid-row: 1/2;
+  grid-column: 1/1;
+  width: 100%;
+}
+
+#title{
+  grid-row: 1/1;
+  grid-column: 2/3;
+}
+
+#about{
+  grid-row: 2/2;
+  grid-column: 3/4;
+
+}
+
+/* End of minigrid styling */
+
+#breaktext{
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+}
+
+/* Styles three mini cards/skill showcase */
 .dev{
   grid-column-start: 1;
+  grid-row: 3;
+  text-align: center;
 }
 .des{
   grid-column-start: 2;
+  grid-row: 3;
+  text-align: center;
 }
 .etc{
   grid-column-start: 3;
+  grid-row: 3;
+  text-align: center;
 }
