@@ -3,14 +3,45 @@
   box-sizing: border-box;
 }
 
+:root {
+  --card-cream: #F7FFF7;
+  --dark: #0f2027;
+  --mid:  #203a43;
+  --light: #2c5364;
+}
+
+body{
+  min-height: 100vh;
+  min-width: 100%;
+  margin: 0px;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+  background: linear-gradient(to bottom, #7F00FF, #E100FF);*/
+  background: linear-gradient(to bottom, var(--dark), var(--mid), var(--light));
+}
+
+
 /* Creates main grid to sections on */
-.card {
+.cardContainer {
   display: grid;
   grid: auto-flow / 1fr 1fr 1fr;
   grid-gap: 10px;
-  padding: 2%;
-  /*max-width: 1500px; (at certain size, stop expanding card and just let background get bigger around it?)*/
+  padding-top: 5%;
+  padding-bottom: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  max-width: 1500px; /* (at certain size, stop expanding card and just let background get bigger around it?)*/
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
+.card{
+  background: var(--card-cream);
+  border-radius: 5px;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0px 8px 7px 0px rgba(0,0,0,0.4);
+}
+
 
 .intro {
   grid-column: 1/span 3;
@@ -55,25 +86,33 @@
   grid-column: 1/span 3;
   grid-row: 2;
   text-align: center;
+  color: var(--card-cream);
 }
 
 /* Styles three mini cards/skill showcase */
-.dev{
+
+.content {
+  grid-row: 3;
+}
+
+#dev {
   grid-column-start: 1;
-  grid-row: 3;
-  text-align: center;
 }
-.des {
+#des {
   grid-column-start: 2;
-  grid-row: 3;
-  text-align: center;
 }
-.etc {
+#etc {
   grid-column-start: 3;
-  grid-row: 3;
+}
+
+.card h3 {
   text-align: center;
 }
 
+
+
+
+/* DEBUG STUFF
 .debug .minigrid {
   background-color: cyan;
 }
@@ -93,12 +132,13 @@
 .debug #breaktext {
   background-color: purple;
 }
-.debug .dev {
+.debug #dev {
   background-color: orange;
 }
-.debug .des {
+.debug #des {
   background-color: magenta;
 }
-.debug .etc {
+.debug #etc {
   background-color: orange;
 }
+*/
